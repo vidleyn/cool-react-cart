@@ -12,9 +12,7 @@ import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useForm } from "react-hook-form"
 import type { OrderForm } from "../../model/form";
-
-
-
+import { postOrder } from "../../api/postOrder";
 
 
 export default function OrderForm() {
@@ -23,7 +21,10 @@ export default function OrderForm() {
     handleSubmit,
     formState: { errors },
   } = useForm<OrderForm>()
-  const onSubmit = handleSubmit((data) => console.log(data))
+  const onSubmit = handleSubmit((data) => {
+    console.log(data)
+    console.log(postOrder(data))
+  })
 
   return (
     <Box
