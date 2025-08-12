@@ -1,6 +1,6 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import Cart from "./components/cart.tsx";
+import Cart from "./components/cart/cart.tsx";
 import Header from "./components/header.tsx";
 import Heading from "./components/heading.tsx";
 import Footer from "./components/footer.tsx";
