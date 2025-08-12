@@ -1,7 +1,7 @@
 import { Box, Container } from "@mui/material";
 import { fetchProducts } from "../../api/fetch-products";
 import { useEffect, useState } from "react";
-import OrderForm from "./order-form";
+import OrderForm from "./orderForm";
 import CartProducts from "./cart-products";
 
 export default function Cart({ ...restProps }) {
