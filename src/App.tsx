@@ -1,10 +1,10 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import Cart from "./components/cart/cart.tsx";
+import Cart from "./pages/cart.tsx";
 import Header from "./components/header.tsx";
-import Heading from "./components/heading.tsx";
 import Footer from "./components/footer.tsx";
-import MainContents from "./components/main-contents.tsx";
+import Home from "./pages/home.tsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const darkTheme = createTheme({
@@ -15,17 +15,19 @@ function App() {
 
   return (
     <>
-      <ThemeProvider theme={darkTheme}>
-        <CssBaseline />
+      <BrowserRouter>
+        <ThemeProvider theme={darkTheme}>
+          <CssBaseline />
+          <Header></Header>
 
-        <Header></Header>
-        <MainContents>
-          <Heading></Heading>
-          <Cart></Cart>
-        </MainContents>
+          <Routes>
+            <Route element={<Home />} path="/"></Route>
+            <Route element={<Cart />} path="/cart"></Route>
+          </Routes>
 
-        <Footer></Footer>
-      </ThemeProvider>
+          <Footer></Footer>
+        </ThemeProvider>
+      </BrowserRouter>
     </>
   );
 }

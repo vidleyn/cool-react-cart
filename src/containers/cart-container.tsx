@@ -1,10 +1,10 @@
 import { Box, Container } from "@mui/material";
-import { fetchProducts } from "../../api/fetch-products";
+import { fetchProducts } from "../api/fetch-products";
 import { useEffect, useState } from "react";
-import OrderForm from "./order-form";
-import CartProducts from "./cart-products";
+import OrderForm from "../components/cart/order-form";
+import CartProducts from "../components/cart/cart-products";
 
-export default function Cart({ ...restProps }) {
+export default function CartContainer() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -22,16 +22,10 @@ export default function Cart({ ...restProps }) {
   }, []);
 
   return (
-    <Box
-      component="section"
-      sx={{ mb: 10 }}
-    >
+    <Box component="section" sx={{ mb: 10 }}>
       <Container maxWidth="xl">
         <Box sx={{ display: "flex", alignItems: "start", columnGap: 3 }}>
-          <CartProducts
-            products={products}
-            isLoading={loading}
-          />
+          <CartProducts products={products} isLoading={loading} />
           <OrderForm />
         </Box>
       </Container>

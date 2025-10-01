@@ -1,5 +1,5 @@
 import { Box, Button, CircularProgress, Typography } from "@mui/material";
-import ProductList from "../cart/product-list";
+import ProductList from "./product-list";
 
 export default function CartProducts({ products, isLoading = true }) {
   return (
@@ -23,32 +23,16 @@ export default function CartProducts({ products, isLoading = true }) {
           py: 4,
         }}
       >
-        <Typography
-          variant="h6"
-          color="#aaaaaa"
-          component="span"
-        >
+        <Typography variant="h6" color="#aaaaaa" component="span">
           Оборудование
         </Typography>
-        <Typography
-          variant="h6"
-          color="#aaaaaa"
-          component="span"
-        >
+        <Typography variant="h6" color="#aaaaaa" component="span">
           Цена
         </Typography>
-        <Typography
-          variant="h6"
-          color="#aaaaaa"
-          component="span"
-        >
+        <Typography variant="h6" color="#aaaaaa" component="span">
           Количество
         </Typography>
-        <Typography
-          variant="h6"
-          color="#aaaaaa"
-          component="span"
-        >
+        <Typography variant="h6" color="#aaaaaa" component="span">
           Стоимость
         </Typography>
         <Button>Очистить</Button>
