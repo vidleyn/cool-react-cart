@@ -10,21 +10,21 @@ import {
 } from "@mui/material";
 import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 import type { OrderForm } from "../../model/form";
-import { postOrder } from "../../api/postOrder";
-
+import { postOrder } from "../../api";
 
 export default function OrderForm() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<OrderForm>()
+  } = useForm<OrderForm>();
   const onSubmit = handleSubmit((data) => {
-    console.log(data)
-    console.log(postOrder(data))
-  })
+    console.log(data);
+    console.log(postOrder(data));
+    console.log(errors);
+  });
 
   return (
     <Box
@@ -38,25 +38,15 @@ export default function OrderForm() {
         p: 4,
       }}
     >
-      <Box
-        component="header"
-        sx={{}}
-      >
+      <Box component="header" sx={{}}>
         <Typography variant="h6">Данные заказа</Typography>
       </Box>
       <Divider></Divider>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-        <Typography
-          variant="h6"
-          gutterBottom
-        >
+        <Typography variant="h6" gutterBottom>
           Даты и время аренды
         </Typography>
-        <Typography
-          variant="body2"
-          color="text.secondary"
-          gutterBottom
-        >
+        <Typography variant="body2" color="text.secondary" gutterBottom>
           Укажите время аренды
         </Typography>
 
@@ -65,17 +55,11 @@ export default function OrderForm() {
           <DateTimePicker label="Время окончания аренды" />
         </LocalizationProvider>
 
-        <Button
-          variant="contained"
-          sx={{ mb: 2 }}
-        >
+        <Button variant="contained" sx={{ mb: 2 }}>
           Рассчитать стоимость
         </Button>
 
-        <Typography
-          variant="body2"
-          sx={{ mb: 2 }}
-        >
+        <Typography variant="body2" sx={{ mb: 2 }}>
           Количество смен: – <br />
           Общее количество часов: – <br />
           Сумма: – <br />
@@ -112,7 +96,9 @@ export default function OrderForm() {
           публичной, в предоставлении оборудования может быть отказано."
           />
         </FormGroup>
-        <Button onClick={onSubmit} variant="contained">Отправить заявку</Button>
+        <Button onClick={onSubmit} variant="contained">
+          Отправить заявку
+        </Button>
       </Box>
     </Box>
   );
