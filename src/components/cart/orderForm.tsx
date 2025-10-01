@@ -10,8 +10,22 @@ import {
 } from "@mui/material";
 import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { useForm } from "react-hook-form"
+import type { OrderForm } from "../../model/form";
+import { postOrder } from "../../api/postOrder";
+
 
 export default function OrderForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<OrderForm>()
+  const onSubmit = handleSubmit((data) => {
+    console.log(data)
+    console.log(postOrder(data))
+  })
+
   return (
     <Box
       sx={{
@@ -74,10 +88,11 @@ export default function OrderForm() {
       <Box
         component="form"
         sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+        onSubmit={onSubmit}
       >
-        <TextField label="Ваше имя"></TextField>
+        <TextField {...register("firstName")} label="Ваше имя"></TextField>
         <TextField label="Номер телефона"></TextField>
-        <TextField label="E-mail"></TextField>
+        <TextField {...register("email")} label="E-mail"></TextField>
         <TextField label="Комментарий к заказу"></TextField>
 
         <FormGroup>
@@ -97,7 +112,7 @@ export default function OrderForm() {
           публичной, в предоставлении оборудования может быть отказано."
           />
         </FormGroup>
-        <Button variant="contained">Отправить заявку</Button>
+        <Button onClick={onSubmit} variant="contained">Отправить заявку</Button>
       </Box>
     </Box>
   );
