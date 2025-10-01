@@ -1,7 +1,13 @@
+import type { Product } from "../../types";
 import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import ProductList from "./product-list";
 
-export default function CartProducts({ products, isLoading = true }) {
+type CartProductsProps = {
+  products: Product[];
+  isLoading?: boolean;
+};
+
+export default function CartProducts({ products, isLoading = true }: CartProductsProps) {
   return (
     <Box
       sx={{

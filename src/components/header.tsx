@@ -2,9 +2,8 @@ import { AppBar, Badge, Box, Button, Container, IconButton } from "@mui/material
 import SiteMark from "./site-mark";
 import { Favorite, Search, ShoppingCart } from "@mui/icons-material";
 import { Link as RouterLink } from "react-router-dom";
-import { Link } from "@mui/material";
 
-export default function Header({ ...restProps }) {
+export default function Header() {
   return (
     <>
       <AppBar position="static" sx={{ mb: 4, py: 2 }}>

@@ -1,6 +1,6 @@
 import { Box, Breadcrumbs, Container, Link, Typography } from "@mui/material";
 
-export default function Heading({ title, ...restProps }) {
+export default function Heading({ title }: { title: string }) {
   return (
     <>
       <Box component="section" sx={{ mb: 6 }}>

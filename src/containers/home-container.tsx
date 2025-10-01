@@ -1,10 +1,11 @@
-import { Box, Container, Typography, Button, Grid, CircularProgress } from "@mui/material";
+import { Box, Container, Typography, Button, CircularProgress } from "@mui/material";
 import { useEffect, useState } from "react";
 import { fetchProducts } from "../api/fetch-products";
 import CatalogGrid from "../components/catalog-grid";
+import type { Product } from "../types";
 
 export default function HomeContainer() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

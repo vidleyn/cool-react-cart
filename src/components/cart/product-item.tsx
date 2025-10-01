@@ -1,9 +1,10 @@
-import { Add, Minimize, PlusOne, Remove } from "@mui/icons-material";
+import type { Product } from "../../types";
+import { Add, Remove } from "@mui/icons-material";
 import { Box, Typography, ListItem, IconButton, SvgIcon } from "@mui/material";
 
 // TODO: make this grid instead of flex
 
-export default function ProductItem({ product }) {
+export default function ProductItem({ product }: { product: Product }) {
   return (
     <ListItem
       sx={{
@@ -31,10 +32,7 @@ export default function ProductItem({ product }) {
         <Typography variant="h6">{product.name}</Typography>
       </Box>
 
-      <Typography
-        variant="h6"
-        noWrap
-      >
+      <Typography variant="h6" noWrap>
         {product.price}₽
       </Typography>
       <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -48,10 +46,7 @@ export default function ProductItem({ product }) {
           <Add />
         </IconButton>
       </Box>
-      <Typography
-        variant="h6"
-        noWrap
-      >
+      <Typography variant="h6" noWrap>
         {product.price * product.quantity}₽
       </Typography>
       <Box sx={{ display: "flex", justifyContent: "end" }}>
@@ -64,15 +59,8 @@ export default function ProductItem({ product }) {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                id="SVGRepo_bgCarrier"
-                strokeWidth="0"
-              ></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              ></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+              <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
               <g id="SVGRepo_iconCarrier">
                 <path
                   fillRule="evenodd"

@@ -1,7 +1,8 @@
 import { Grid } from "@mui/material";
 import CatalogProductCard from "./catalog-product-card";
+import type { Product } from "../types";
 
-export default function CatalogGrid({ products }) {
+export default function CatalogGrid({ products }: { products: Product[] }) {
   return (
     <>
       <Grid container spacing={2}>

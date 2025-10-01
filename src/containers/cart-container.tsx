@@ -3,9 +3,10 @@ import { fetchProducts } from "../api/fetch-products";
 import { useEffect, useState } from "react";
 import OrderForm from "../components/cart/order-form";
 import CartProducts from "../components/cart/cart-products";
+import type { Product } from "../types";
 
 export default function CartContainer() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

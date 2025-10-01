@@ -1,6 +1,7 @@
 import { Box, Card, CardContent, CardMedia, Typography, Button } from "@mui/material";
+import type { Product } from "../types";
 
-export default function CatalogProductCard({ product }) {
+export default function CatalogProductCard({ product }: { product: Product }) {
   return (
     <Card
       sx={{
