@@ -1,69 +1,22 @@
-# React + TypeScript + Vite
+# CoolReactCart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![WIP](https://img.shields.io/badge/status-W.I.P.-yellow?style=for-the-badge&logo=warning)
 
-Currently, two official plugins are available:
+CoolReactCart is a simple store catalog and shopping cart application built with **React + Vite + TypeScript** using **Material UI**. The project is focused on practicing component architecture, routing, state management, and UI design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework/Library:** React 19
+- **Language:** TypeScript
+- **UI Library:** Material UI
+- **Bundler:** Vite
+- **Routing:** React Router DOM
+- **Linting:** ESLint
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Product catalog:** Displays products from mock JSON data
+- **Shopping Cart with order form:** Add, remove, and list products in the cart. Basic checkout form with validation (name, email, date, etc.)
+- **Responsive UI:** Layout built with Material UI grid system
+- **State Management:** Context-based cart state + local storage persistence
+- **Type Safety:** Strongly typed API responses, product models, and component props
